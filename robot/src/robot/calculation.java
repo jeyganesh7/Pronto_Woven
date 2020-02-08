@@ -71,7 +71,14 @@ public class calculation
 		 				}
 	 					break;
 			 
-			 }}	
+			 case "r": 
+				 		curr_direction = ((prev_direction + a) % 4);
+				 		prev_direction = curr_direction;
+				 		//System.out.println(+curr_direction);
+				 		break;
+				 		
+			 }}
+	
 	}
 
 }
