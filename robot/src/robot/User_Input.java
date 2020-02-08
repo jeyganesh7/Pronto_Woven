@@ -52,7 +52,7 @@ public class User_Input
         	Scanner dc = new Scanner(System.in);
         	char e = dc.next().charAt(0);
         	
-        	if(e =='Y')
+        	if(e =='Y' || e =='y')
         	{
         		//System.out.println("reached here");
         		main(null);
