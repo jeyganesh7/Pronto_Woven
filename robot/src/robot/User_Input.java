@@ -2,7 +2,8 @@ package robot;
 
 import java.util.Scanner;
 
-public class User_Input {
+public class User_Input 
+{
 
 	public static void main(String[] args) 
 	{
@@ -10,7 +11,7 @@ public class User_Input {
 		
 		String s; 
 		Scanner sc = new Scanner(System.in);
- 		System.out.println("Enter ROBOT COMMAND"); 
+ 		System.out.println("Enter ROBOT Commands - seperated by comma: "); 
  		s = sc.nextLine();  
  		
  		String[] question;
@@ -18,6 +19,7 @@ public class User_Input {
         /* delimiter */
         String delimiter = ",";
         question = s.split(delimiter);
+        calculation.robot_movement(question);     
 	}
 
 }
