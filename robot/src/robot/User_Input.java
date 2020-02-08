@@ -35,23 +35,28 @@ public class User_Input
         if(error > 0)
         {
         	System.out.println('\n'+"Invalid command found!"+'\n');
-        	System.out.println("Do you want to try again? Enter Y or N"+'\n');//Y to continue, N to exit
-        	Scanner dc = new Scanner(System.in);
-        	char e = dc.next().charAt(0);
-        	
-        	if(e =='Y' || e =='y')
-        	{
-        		main(null);
-        	}
-        	else 
-        	{
-        		System.out.println("Bye bye...see you later");
-        		System.exit(0);
-        	}
+        	User_retry();
         }
         else
         {	
         calculation.robot_movement(question);
         }		
 	} 	
+	
+	public static void User_retry ()
+	{
+		System.out.println("Do you want to try again? Enter Y or N");//Y to continue, N to exit
+    	Scanner dc = new Scanner(System.in);
+    	char e = dc.next().charAt(0);
+    	
+    	if(e =='Y' || e =='y')
+    	{
+    		main(null);
+    	}
+    	else 
+    	{
+    		System.out.println('\n'+"Bye bye...see you later");
+    		System.exit(0);
+    	}
+	}
 }

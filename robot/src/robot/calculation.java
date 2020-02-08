@@ -21,7 +21,7 @@ public class calculation
 		 for (int i = 0; i < question.length; i++)
 	        {
 			 //Separate Integer and Character
-			 int a = Integer.parseInt(question[i].replaceAll("[^0-9]", "")); //for bigger numbers like 17,99 
+			 int a = Integer.parseInt(question[i].replaceAll("[^0-9]", "")); //for bigger numbers like 17,101 
 			 String r = String.valueOf(question[i].charAt(0));
 			 			 
 			 switch(r)
@@ -94,7 +94,8 @@ public class calculation
 		 
 		 System.out.println("Current co-ordinate position of Robot is (" +x+","+y+")"+'\n');
 		 int distance = Math.abs(x)+Math.abs(y);
-		 System.out.println("Minimum Distance to Starting Point is " +distance+ " Unit"+'\n'); 
+		 System.out.println("Minimum Distance to Starting Point is " +distance+ " Unit"+'\n');
+		 User_Input.User_retry();
 	}
 }
 	
