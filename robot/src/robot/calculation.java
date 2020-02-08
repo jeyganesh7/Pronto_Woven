@@ -77,7 +77,29 @@ public class calculation
 				 		//System.out.println(+curr_direction);
 				 		break;
 				 		
-			 }}
+			 case "l":
+				 		//curr_direction = (((prev_direction - a) + 4) % 4);
+				  		curr_direction = (prev_direction - a);
+				 		
+				 		if (curr_direction < 0)
+				 		{
+				 			curr_direction = curr_direction % 4;
+				 			curr_direction = curr_direction + 4;
+				 			prev_direction = curr_direction;
+				 		}
+				 		else
+				 		{
+				 			curr_direction = curr_direction % 4;
+				 			prev_direction = curr_direction;
+				 		}
+				 		//System.out.println(+curr_direction);
+				 		//System.out.println(+prev_direction);
+				 		break;
+
+			 }
+			 
+	        }
+		 
 	
 	}
 
