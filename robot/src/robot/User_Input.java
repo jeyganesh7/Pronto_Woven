@@ -7,54 +7,40 @@ public class User_Input
 
 	public static void main(String[] args)
 	{
-		
-		// TODO Auto-generated method stub
-		//Scanner input = new Scanner(System.in);	
 		String s; 
 		Scanner sc = new Scanner(System.in);
  		System.out.println("Enter ROBOT Commands - seperated by comma: "); 
  		s = sc.nextLine();  
+ 		String ls = s.toLowerCase();
  		
- 		//if (!s.contains("f") && !s.contains("b") && !s.contains("l") && !s.contains("r") )
- 		
-        String[] question;
-         
-        /* delimiter */
+ 		String[] question;
         String delimiter = ",";
-        
-        question = s.split(delimiter);
+        question = ls.split(delimiter);
         check_errors(question);
 	}
 	
 	public static void check_errors (String[] question)
 	{
-        int error = 0;
-        
+        int error = 0;        
         for (int i = 0; i < question.length; i++)
         {
-        	String b = String.valueOf(question[i].charAt(0));
-        	//if(b !="f" || b !="b" || b !="l" || b !="r")
-        	if (!b.contains("f") && !b.contains("b") && !b.contains("l") && !b.contains("r") )
+        	String r = String.valueOf(question[i].charAt(0));
+        	
+        	if (!r.contains("f") && !r.contains("b") && !r.contains("l") && !r.contains("r") )
         	{
-        		//System.out.println("checkpoint 1");
         		error++; 		
         	}
-        	else
-        	{
-        		error = error;
-        	}
         }
+        
         if(error > 0)
         {
         	System.out.println('\n'+"Invalid command found!"+'\n');
-        	System.out.println("Do you want to try again? Enter Y or N"+'\n');
-        	//char e;
+        	System.out.println("Do you want to try again? Enter Y or N"+'\n');//Y to continue, N to exit
         	Scanner dc = new Scanner(System.in);
         	char e = dc.next().charAt(0);
         	
         	if(e =='Y' || e =='y')
         	{
-        		//System.out.println("reached here");
         		main(null);
         	}
         	else 
@@ -66,8 +52,6 @@ public class User_Input
         else
         {	
         calculation.robot_movement(question);
-        }
- 		
+        }		
 	} 	
-
 }
