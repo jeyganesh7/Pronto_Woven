@@ -5,14 +5,13 @@ public class calculation
 
 	public static void robot_movement (String[] question)
 	{
-		 	 
-		 System.out.println("Processing command....");
+ System.out.println('\n'+"Processing command...."+'\n');
 		 
-		 //Initialise co-ordinates of robot 
+		 //Initialise co-ordinates and direction 
 		 int x = 0;
 		 int y = 0;
 
-		 //Initialise direction of robot
+		 //Set direction
 		 //North: a=0, East: a=1, South: a=2, West: a=3
 		 int curr_direction = 0;
 		 int prev_direction = 0;
@@ -22,11 +21,12 @@ public class calculation
 			 //Seperate Integer and Character
 			 
 			 //int a = Integer.parseInt(String.valueOf(question[i].charAt(1))); 
+			 
+			 //for bigger numbers like 17,99 
 			 int a = Integer.parseInt(question[i].replaceAll("[^0-9]", ""));
 			 
 			 String b = String.valueOf(question[i].charAt(0));
 			 
-			  
 			 switch(b)
 			 {
 			 case "f": if(curr_direction == 0) //north
@@ -74,13 +74,13 @@ public class calculation
 			 case "r": 
 				 		curr_direction = ((prev_direction + a) % 4);
 				 		prev_direction = curr_direction;
-				 		//System.out.println(+curr_direction);
 				 		break;
 				 		
 			 case "l":
 				 		//curr_direction = (((prev_direction - a) + 4) % 4);
 				  		curr_direction = (prev_direction - a);
-				 		
+				 		//In-cases when number is high. 
+				  		//direction can be negative with commands like l27, l99 as 1st command in the string.
 				 		if (curr_direction < 0)
 				 		{
 				 			curr_direction = curr_direction % 4;
@@ -92,17 +92,15 @@ public class calculation
 				 			curr_direction = curr_direction % 4;
 				 			prev_direction = curr_direction;
 				 		}
-				 		//System.out.println(+curr_direction);
-				 		//System.out.println(+prev_direction);
 				 		break;
 
 			 }
 			 
 	        }
 		 
-		 System.out.println("Current position of Robot is " +x+","+y);
+		 System.out.println("Current co-ordinate position of Robot is (" +x+","+y+")"+'\n');
 		 int distance = Math.abs(x)+Math.abs(y);
-		 System.out.println("Minimum Distance to Starting Point is " +distance);
+		 System.out.println("Minimum Distance to Starting Point is " +distance+ " Unit");
 	
 	}
 
