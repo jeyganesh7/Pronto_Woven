@@ -100,6 +100,9 @@ public class calculation
 			 
 	        }
 		 
+		 System.out.println("Current position of Robot is " +x+","+y);
+		 int distance = Math.abs(x)+Math.abs(y);
+		 System.out.println("Minimum Distance to Starting Point is " +distance);
 	
 	}
 
